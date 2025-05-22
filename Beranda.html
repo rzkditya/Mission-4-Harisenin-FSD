@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Beranda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="Index.js"></script>
+    <title>Dit To Do Dit</title>
+</head>
+<body>
+    <!-- App Container -->
+    <div class="container">
+        <h1>Dit To Do Dit</h1>
+
+        <!-- Profile -->
+        <div class="user-profile">
+            <div class="profile-pic">
+                <img src="https://i.pinimg.com/564x/3f/0b/4c/3f0b4c5a1d2e6a7d8e9f1a2b5c3d4e5f.jpg" alt="Profile Picture">
+            </div>
+            <div class="user-info">
+                <span>Username</span>
+                <span>Position</span>
+            </div>
+        </div>
+
+        <!-- Date -->
+        <div class="date-time">
+            <span id="date">01 Januari 2000</span>
+            <span id="time">00:00:00</span>
+        </div>
+        
+        <div class="input-container">
+            <form class="input-area">
+                <input type="text" id="todo-input" placeholder="Add a new todo">
+                <select id="todo-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit" id="add-todo-btn"><i class="fa-solid fa-plus"></i></button>
+            </form>
+            <div class="todos-container">
+    
+                <ul id="todo-list">
+                    <!-- todo items will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+        <div class="all-container">
+            <h1>All Todo</h1>
+            <div class="todo-header">
+                    <span class="status-text">Status</span>
+                    <span class="todo-title">todo</span>
+                    <span class="todo-priority">Priority</span>
+                    <span class="todo-date">Date</span>
+            </div>
+            <div class="todos-container">
+                <ul id="todo-list">
+                    <!-- todo items will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+        <div class="finished-container">
+            <h1>Finished Todo</h1>
+            <div class="todo-header">
+                    <span class="status-text">Status</span>
+                    <span class="todo-title">todo</span>
+                    <span class="todo-priority">Priority</span>
+                    <span class="todo-date">Date</span>
+            </div>
+            <div class="todos-container">
+                <ul id="todo-list">
+                    <!-- todo items will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
