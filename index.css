@@ -212,8 +212,13 @@
         background: rgba(67, 67, 67, 0.20);
         border: none;
         outline: none;
-        overflow-y: auto;
+        overflow-y: scroll;
+
         font-size: 14px;
+    }
+
+    .flex-3::-webkit-scrollbar {
+        display: none;
     }
 
     .flex-3 > div:first-child {
@@ -227,7 +232,7 @@
     }
 
     .flex-3 span {
-        margin-left: 10px;
+        margin-right: 15px;
     }
 
     #clear {
