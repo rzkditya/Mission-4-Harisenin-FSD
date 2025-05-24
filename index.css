@@ -12,6 +12,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        
         min-height: 100vh;
         background: url(/Resources/Pictures/Background-1.jpg) no-repeat center center/cover;
     }
@@ -21,12 +22,14 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
         padding: 10px;
         width: 100%;
         height: 100%;
         max-width: 400px;
-        max-height: 600px;
-
+        max-height: 650px;
+        position: fixed;
+        top: 10%;
         color: #fff;
         border-radius: 20px;
         box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
@@ -36,15 +39,16 @@
 
     h1 {
         font-size: 2rem;
+        margin-bottom: 10px;
     }
 
     .flex-1 {
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: 100%;
-        height: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         font-size: 1rem;
         font-weight: 400;
     }
@@ -53,6 +57,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        
         width: 100%;
         height: 100%;
     }
@@ -67,9 +72,9 @@
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
+
         margin-left: 10px;
     }
-
 
     .user-info span:first-child {
         font-size: 1rem;
@@ -85,6 +90,7 @@
         justify-content: center;
         align-items: flex-end;
         flex-direction: column;
+
         width: 100%;
         height: 100%;
         font-size: 0.8rem;
@@ -94,9 +100,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: 100%;
         height: 100%;
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-weight: 400;
     }
 
@@ -107,6 +114,7 @@
     .flex-2 .input-area {
         display: flex;
         flex-direction: column;
+
         gap: 10px;
         width: 100%;
         height: 100%;
@@ -116,6 +124,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: 100%;
         height: 100%;
         gap: 20px;
@@ -124,6 +133,7 @@
     .todo-title {
         display: flex;
         flex-direction: column;
+
         width: 100%;
         height: 100%;
     }
@@ -133,25 +143,30 @@
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
+
         width: 100%;
         height: 100%;
     }    
 
-    select, input {
+    select, input, textarea {
         width: 100%;
         height: 100%;
         padding: 10px;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
-        color: #656565;
+        background: rgba(67, 67, 67, 0.20);
+        color: rgba(0, 0, 0, 0.5);
         border: none;
         outline: none;
     }
 
-    input[type="text"] {
-        width: 100%;
+    textarea {
+        color: #fff;
         height: 100px;
-        text-align: center;
+        resize: none;
+    }
+
+    textarea::placeholder {
+        color: rgba(0, 0, 0, 0.5);
     }
 
     .button-area {
@@ -163,16 +178,23 @@
     .button-area button {
         display: flex;
         justify-content: center;
+
         padding: 10px 30px;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
-        color: #656565;
+        background: rgba(67, 67, 67, 0.20);
+        color: #fff;
         border: none;
         outline: none;
+        font-weight: 500;
+    }
+
+    .button-area button:hover {
+        transform: scale(1.1);
     }
 
     hr { 
         display: block;
+
         margin: 20px 0;
         width: 100%;
         border-color: rgba(255, 255, 255, 0.5);
@@ -180,204 +202,178 @@
 
     .flex-3 {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
         flex-direction: column;
+
         width: 100%;
         height: 100%;
         padding: 10px;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
-        color: #656565;
+        background: rgba(67, 67, 67, 0.20);
         border: none;
         outline: none;
-        
         overflow-y: auto;
+        font-size: 14px;
     }
 
-    .flex-3 div:first-child {
+    .flex-3 > div:first-child {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
+
         gap: 20px;
-        color: #fff;
         width: 100%;
-        height: 100%;
+        font-weight: 500;
+    }
+
+    .flex-3 span {
+        margin-left: 10px;
     }
 
     #clear {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        width: 100px;
-        padding: 0;
+
+        width: 70px;
+        height: 22px;
         border-radius: 10px;
         background: transparent;
-        color: #fff;
         border: none;
         outline: none;
+        font-weight: 500;
+        color: #fff;
     }
 
     .flex-3 hr {
         margin: 10px 0;
     }
-/*
-    .input-container h1, .todo-container h1 {
-        font-size: 2.5rem;
+
+    #tabs .activate {
+        padding: 2px 5px;
+        border-radius: 5px;
+        background: rgba(67, 67, 67, 0.5);
     }
 
-    .input-area {
+    #todo-content {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+
         width: 100%;
     }
 
-    .input-area input {
-        flex: 1;
-        padding: 10px 15px;
-        font: 1rem sans-serif;
-        border: none;
-        outline: none;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
-        color: #656565;
+    #done-content {
+        display: none;
     }
 
-    .input-area select {
-        margin: 0 10px;
-        padding: 10px;
-        border: none;
-        outline: none;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.20);
-        color: #656565;
-    }
-
-    .input-area button {
-        padding: 10px 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.20);
-        border: 2px solid rgba(255, 255, 255, 0.20);
+    button:hover, #todo-priority:hover, #todo-date:hover {
         cursor: pointer;
-        transition: all 0.3s ease;
     }
 
-    .input-area button:hover {
-        transform: scale(1.1);
-        background: rgba(255, 255, 255, 0.30);
+    #tabs > span:hover, #tabs > button:hover, #clear:hover {
+        cursor: pointer;
+        padding: 2px 5px;
+        border-radius: 5px;
+        background: rgba(67, 67, 67, 0.5);
     }
 
-    .todo-header {
+    .todo-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-        font-size: 0.8rem;
-        margin-bottom: 5px;
-    }
 
-    #todo-list {
         width: 100%;
-    }
-
-    #todo-list li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        min-width: 380px;
-        background: rgba(255, 255, 255, 0.20);
-        margin-bottom: 10px;
         padding: 10px 15px;
+        margin-bottom: 10px;
+        gap: 10px;
         border-radius: 10px;
-        color: #656565;
-        font-size: 1.2rem;
+        background: rgba(67, 67, 67, 0.20);
         position: relative;
         transition: box-shadow 0.3s ease;
     }
-
-    #todo-list li .todo-date {
-        align-self: flex-end;
+    
+    .todo-element {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        width: 280px;
     }
 
-    #todo-list li:hover {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
+    .todo-element .checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    #todo-list li .checkbox {
-        min-width: 20px;
+        padding: 0;
+        width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.20);
+        background: rgba(67, 67, 67, 0.20);
         border: 2px solid rgba(255, 255, 255, 0.20);
         appearance: none;
         cursor: pointer;
         transition: all 0.3s ease;
     }
 
-    #todo-list li .checkbox:checked {
-        background: rgb(76, 135, 255);
+    .todo-element .checkbox:checked {
+        background: rgb(0, 200, 255);
         transform: scale(1.1);
     }
 
-    #todo-list li .checkbox:checked::before {
+    .todo-element .checkbox:checked::before {
         content: '\2713';
-        font-size: 0.8rem;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 1rem;
+        color: #000;
     }
 
-    #todo-list li span {
-        flex: 1;
-        margin-left: 10px;
+    .todo-element .todo-text {
+        font-size: 16px;
+        width: 150px;
         word-break: break-word;
     }
 
-    #todo-list .todo-item{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    #todo-list .todo-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        font-size: 0.8rem;
-        margin-bottom: 5px;
-    }
-
-    #todo-list .todo-header span {
-        margin: 0px;
-    }
-
-    #todo-list .todo-header .todo-status {
-        max-width: 60px;
-    }
-
-    #todo-list .todo-header .todo-priority {
-        text-align: right;
-    }
-
-    #todo-list .todo-header .todo-date {
-        max-width: 70px;
-        text-align: right;
-    }
-
-    #todo-list .delete-btn {
-        padding: 8px 10px;
-        border-radius: 50%;
-        color: #fff;
-        background: rgb(255, 131, 131);
-        border: 2px solid rgba(255, 255, 255, 0.20);
+    .todo-element .priority-box {
+        padding: 0;
+        width: 10px;
+        height: 10px;
+        background: rgba(67, 67, 67, 0.20);
+        border: 1px solid #fff;
+        appearance: none;
         cursor: pointer;
         transition: all 0.3s ease;
     }
 
-    
+    .priority-box.low-prior {
+        background-color: #fffb11;
+    }
 
+    .priority-box.med-prior {
+        background-color: #f59e0b;
+    }
+
+    .priority-box.high-prior {
+        background-color: #ef4444;
+    }
+
+    .todo-item .delete-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 30px;
+        height: 30px;
+        color: maroon;
+        background: transparent;
+        border: none;
+        appearance: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    /*
+    #todo-ul {
+        width: 100%;
+    }
+    
+    */

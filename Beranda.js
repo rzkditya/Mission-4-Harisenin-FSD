@@ -1,13 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const profileName = document.querySelector(".username");
+    const profilePosition = document.querySelector(".user-position");
+    const menuDate = document.querySelector("#date");
+    const menuTime = document.querySelector("#time");
+
     const todoInput = document.getElementById("todo-input");
     const todoPriority = document.getElementById("todo-priority");
-    const addtodoButton = document.getElementById("add-todo-btn");
-    const todoList = document.getElementById("todo-list");
+    const todoDate = document.getElementById("todo-date");
+    const submitButton = document.getElementById("submit-btn");
+    const todoCheckbox = document.querySelector(".checkbox");
+    const todoUl = document.getElementById("todo-ul");
+
+
+    profileName.innerHTML = "Rizky Aditya";
+    profilePosition.innerHTML = "Web Developer";
+
+    setInterval(() => {
+        const date = new Date();
+        const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        menuDate.innerHTML = date.toLocaleDateString("id-ID", options);
+        menuTime.innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    }, 1000);
 
     const addtodo = (e) => {
         e.preventDefault();
         const todoText = todoInput.value.trim();
         const todoPriorityText = todoPriority.options[todoPriority.selectedIndex].text;
+        const todoDateText = todoDate.value;
         if (!todoText) {
             return;
         }
@@ -18,28 +37,40 @@ document.addEventListener("DOMContentLoaded", function () {
                 <input type="checkbox" class="checkbox"}>
                 <span class="todo-text">${todoText}</span>
                 <span class="todo-priority">${todoPriorityText}</span>
-                <span class="todo-date">${new Date().toLocaleDateString()}</span>
-                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                <span class="todo-date">${todoDateText}</span>
+                <div class="delete-btn">
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
             </div>
         `;
 
-        todoList.appendChild(li);
+        todoUl.appendChild(li);
         todoInput.value = '';
         toggleEmptyState();
     };
 
-    addtodoButton.addEventListener("click", addtodo);
+    submitButton.addEventListener("click", addtodo);
     todoInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
             addtodo(e);
         }
     });
 
-    function savedTodoList() {
-        localStorage.setItem("123", "test");
+    if (e.done) {
+        todoCheckbox.checked = true;
+        todoTask.classList.add("line-through");
+    } else {
+        todoCheckbox.checked = false;
+        todoTask.classList.remove("line-through");
     }
 
-    savedTodoList();
+    function submitForm() {
+        const todoText = todoInput.value.trim();
+        const todoPriorityText = todoPriority.options[todoPriority.selectedIndex].text;
+        const todoDateText = todoDate.value;
 
+        
+        toggleEmptyState();
+    }
 
 });

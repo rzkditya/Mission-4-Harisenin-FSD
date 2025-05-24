@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="index.js"></script>
+    <script src="tes.js"></script>
     <title>Dit To Do Dit</title>
 </head>
 <body>
@@ -20,8 +20,8 @@
                     <img src="/Resources/Pictures/avatar.svg" alt="Profile Picture">
                 </div>
                 <div class="user-info">
-                    <span>Username</span>
-                    <span>Position</span>
+                    <span class="username">Username</span>
+                    <span class="user-position">Position</span>
                 </div>
             </div>
 
@@ -41,6 +41,7 @@
                     <div class="priority">
                         <label for="todo-priority">Priority:</label>
                         <select id="todo-priority">
+                            <option value="" disabled selected>Select Priority</option>
                             <option value="low">Low</option>
                             <option value="medium">Medium</option>
                             <option value="high">High</option>
@@ -49,7 +50,7 @@
                     
                     <!-- Date -->
                     <div class="date">
-                        <label for="todo-date">Date:</label>
+                        <label for="todo-date">Due Date:</label>
                         <input type="date" id="todo-date" name="date">
                     </div>
                 </div>
@@ -57,14 +58,14 @@
                 <!-- Text Area -->
                 <div class="todo-title">
                     <!-- Todo Title -->
-                    <label for="todo-title">Todo:</label>
-                    <input type="text" id="todo-title" placeholder="Add a new todo">
+                    <label for="todo-input">Todo:</label>
+                    <textarea id="todo-input" placeholder="Add a new task"></textarea>
                 </div>
 
                 <!-- Button Area -->
                 <div class="button-area">
-                    <button type="submit" id="add-todo-btn">SUBMIT</button>
-                    <button type="button" id="clear-todo-btn"><i class="fa-solid fa-trash"></i></button>
+                    <button type="submit" id="submit-btn">SUBMIT</button>
+                    <button type="button" id="reset-btn">RESET</button>
                 </div> 
             </form>
         </div>
@@ -73,9 +74,9 @@
 
         <div class="flex-3">
             <div>
-                <div class="" id="tabs">
-                    <span class="todo-list">To Do</span>
-                    <span class="done-list">Done</span>
+                <div id="tabs">
+                    <span class="todo-list" data-tab="todo">To Do</span>
+                    <span class="done-list" data-tab="done">Done</span>
                 </div>
                 <div>
                     <button id="clear">Clear All</button>
@@ -84,8 +85,20 @@
 
             <hr>
 
-            <div id="todo-content">Content Todo</div>
-            <div id="done-content">Content Done</div>
+            <div id="todo-content">
+                <ul id="todo-ul">
+                    <li>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div id="done-content">
+                <ul id="done-ul">
+                    <li>
+                        
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
