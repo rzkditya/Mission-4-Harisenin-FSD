@@ -27,7 +27,7 @@
         width: 100%;
         height: 100%;
         max-width: 400px;
-        max-height: 650px;
+        max-height: 700px;
         position: fixed;
         top: 10%;
         color: #fff;
@@ -212,13 +212,8 @@
         background: rgba(67, 67, 67, 0.20);
         border: none;
         outline: none;
-        overflow-y: scroll;
 
         font-size: 14px;
-    }
-
-    .flex-3::-webkit-scrollbar {
-        display: none;
     }
 
     .flex-3 > div:first-child {
@@ -231,7 +226,7 @@
         font-weight: 500;
     }
 
-    .flex-3 span {
+    .flex-3 #tabs > span {
         margin-right: 15px;
     }
 
@@ -260,16 +255,36 @@
         background: rgba(67, 67, 67, 0.5);
     }
 
+    .tab-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .scroll-container {
+        width: 100%;
+        height: 200px;
+        overflow-y: auto;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+
     #todo-content {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
         width: 100%;
     }
 
     #done-content {
         display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     button:hover, #todo-priority:hover, #todo-date:hover {
@@ -322,9 +337,12 @@
         transition: all 0.3s ease;
     }
 
+    .todo-element .checkbox:hover {
+        transform: scale(1.2);
+    }
+
     .todo-element .checkbox:checked {
         background: rgb(0, 200, 255);
-        transform: scale(1.1);
     }
 
     .todo-element .checkbox:checked::before {
@@ -376,9 +394,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    /*
-    #todo-ul {
-        width: 100%;
+
+    .todo-item .delete-btn:hover {
+        transform: scale(1.2);
     }
-    
-    */

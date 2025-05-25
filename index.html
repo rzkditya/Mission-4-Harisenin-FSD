@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="tes.js"></script>
+    <script src="index.js"></script>
     <title>Dit To Do Dit</title>
 </head>
 <body>
@@ -73,7 +73,7 @@
         <hr>
 
         <div class="flex-3">
-            <div>
+            <div class="tab-header">
                 <div id="tabs">
                     <span class="todo-list" data-tab="todo">To Do</span>
                     <span class="done-list" data-tab="done">Done</span>
@@ -85,19 +85,13 @@
 
             <hr>
 
-            <div id="todo-content">
-                <ul id="todo-ul">
-                    <li>
-                        
-                    </li>
-                </ul>
-            </div>
-            <div id="done-content">
-                <ul id="done-ul">
-                    <li>
-                        
-                    </li>
-                </ul>
+            <div class="scroll-container">
+                <div id="todo-content">
+                    
+                </div>
+                <div id="done-content">
+                    
+                </div>
             </div>
         </div>
     </div>
